@@ -1,11 +1,11 @@
 import React from "react";
 import "./About.css";
-import profile from "./profile.jpg";
+
 function About() {
   return (
     <div className="about_container" id="about">
       <section className="display-pic">
-        <img src={profile} alt="profile-pic" id="dp" />
+        <img src={process.env.PUBLIC_URL+'/profile.jpg'} alt="profile-pic" id="dp" />
       </section>
       <section className="main-content">
         <section class="my_info">
@@ -29,7 +29,7 @@ function About() {
               <i className="fa fa-github"></i> NegiAkash890
             </p>
           </div>
-          <a href="Resume_Akash.doc" download="RESUME.pdf" id="resume_download">
+          <a href="https://drive.google.com/file/d/1zkTjosm_aB151Wk6PB1tzn2EJvaMzj-O/view?usp=sharing" download="https://drive.google.com/file/d/1zkTjosm_aB151Wk6PB1tzn2EJvaMzj-O/view?usp=sharing" id="resume_download">
             <i className="fa fa-download"></i> Download Resume
           </a>
         </section>
