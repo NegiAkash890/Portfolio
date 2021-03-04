@@ -1,41 +1,70 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import TypeWriter from "react-typewriter"
 
 function Header() {
+  const [changeNav , setNav] = useState("link-list");
+  let listener = null ;
+  useEffect(() => {
+    listener=document.addEventListener('scroll',e=>{
+      var scrolled = document.scrollingElement.scrollTop
+      if(scrolled >= 700){
+        setNav("link-list dark")
+      }
+      else{
+        setNav("link-list")
+      }
+    })
+    return ()=>{
+      document.removeEventListener("scroll",listener)
+    }
+  }, [changeNav])
+  const name = 'Akash Negi';
   return (
     <div className="header-container">
-      <nav className="navbar">
-        <ul className="link-list">
+      <nav className="navbar dark">
+        <ul className={changeNav}>
           <li>
             <a href="#">HOME</a>
           </li>
           <li>
-            <a href="#">ABOUT</a>
+            <a href="#about">ABOUT</a>
           </li>
           <li>
-            <a href="#">RESUME</a>
+            <a href="#resume">RESUME</a>
           </li>
           <li>
-            <a href="#">WORKS</a>
+            <a href="#works">WORKS</a>
           </li>
           <li>
-            <a href="#">CONTACT</a>
+            <a href="#contact">CONTACT</a>
           </li>
         </ul>
       </nav>
-      <div className="row_banner">
+      <div className="row_banner"> 
         <div className="banner-text">
-          <h1>My Name is Akash Negi</h1>
+          <h1>
+               <TypeWriter typing={0.5}>Hi I am {name}</TypeWriter>
+          </h1>
           <p>Front End Technology Enthusiast</p>
         </div>
         <div className='connect'>
-             <i className='fa fa-facebook-square fa-2x'></i>
-             <i className='fa fa-instagram fa-2x'></i>
-             <i className='fa fa-envelope fa-2x'></i>
-             <i className='fa fa-linkedin fa-2x'></i>
+          <a href='https://github.com/NegiAkash890'>
+            <i className='fa fa-github fa-2x'></i>
+          </a>
+          <a href='www.instagram.com/akash_negi89/'>
+              <i className='fa fa-instagram fa-2x'></i>
+          </a>
+           <a href='mailto:akash8900@gmail.com' >
+              <i className='fa fa-envelope fa-2x'></i>
+          </a>
+           <a href='www.linkedin.com/in/akash-negi-8900'>
+              <i className='fa fa-linkedin fa-2x'></i>
+          </a>
         </div>
          <div className='nav-about'>
-            <button id='top_btn'></button>
+            <a id='top_btn' href='#about'>
+                  <i className='arrow down'></i>
+            </a>
       </div>
       </div>
      

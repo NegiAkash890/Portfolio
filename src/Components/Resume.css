@@ -1,0 +1,79 @@
+.resume_container {
+  margin: 10px 30px;
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+}
+hr {
+  border-bottom: 1px solid #eeeeee;
+}
+.education,
+.internship,
+.skills {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  margin-right: 30px;
+  border-bottom: 1px solid #eeeeee;
+}
+.edu {
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.edu > div {
+  margin-bottom: 15px;
+}
+.edu > div > em,
+.edu > div > p,
+.intern > p {
+  margin-left: 5px;
+}
+.education > h2,
+.internship > h2,
+.skills > h2 {
+  flex: 1;
+}
+
+.ski {
+  padding-top: 30px;
+}
+.ski > p {
+  display: flex;
+  font-family: "roboto";
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+progress {
+  background-color: white;
+  width: 300px;
+  height: 30px;
+  margin-bottom: 30px;
+}
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+  .resume_container {
+    margin: 20px;
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .education,
+  .internship,
+  .skills {
+    padding: 20px;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .education > h2 , .internship>h2 {
+    border-bottom: 5px solid #0064b4;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .ski {
+    margin-bottom: 20px;
+  }
+}
